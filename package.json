@@ -9,6 +9,7 @@
     "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-masonry-css": "^1.0.14",
     "react-scripts": "3.4.2"
   },
   "scripts": {
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.9",
     "jest-extended": "^0.11.5",
-    "msw": "^0.20.5"
+    "msw": "^0.20.5",
+    "prettier": "^2.0.5"
   }
 }
