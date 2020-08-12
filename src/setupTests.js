@@ -4,3 +4,5 @@
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect'
 import 'jest-extended'
+
+global.PHOTO_COMP_TEST_ID = 'flickr-grid-photo'
