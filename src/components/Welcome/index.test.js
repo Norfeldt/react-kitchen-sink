@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 
-import Welcome from './'
+import Welcome from '.'
 
 test('renders a warm welcome message', () => {
   const { getByText } = render(<Welcome />)
