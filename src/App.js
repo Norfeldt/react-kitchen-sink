@@ -4,9 +4,9 @@ import Welcome from './components/Welcome'
 
 function App() {
   return (
-    <p style={styles.container}>
+    <div style={styles.container}>
       <Welcome />
-    </p>
+    </div>
   )
 }
 
