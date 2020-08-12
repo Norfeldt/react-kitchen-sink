@@ -32,3 +32,122 @@ test('renders only 4 photos if number of photos is set to 4', () => {
 
   expect(getAllByTestId(PhotoGrid)).toHaveLength(4)
 })
+
+test('renders with masonry grid style', () => {
+  const photos = [...Array(9).keys()]
+  const { container } = render(<PhotoGrid photos={photos} />)
+
+  expect(container).toMatchInlineSnapshot(`
+    <div>
+      <div
+        class="my-masonry-grid"
+      >
+        <div
+          class="my-masonry-grid_column"
+          style="width: 33.333333333333336%;"
+        >
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+        </div>
+        <div
+          class="my-masonry-grid_column"
+          style="width: 33.333333333333336%;"
+        >
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+        </div>
+        <div
+          class="my-masonry-grid_column"
+          style="width: 33.333333333333336%;"
+        >
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+          <div
+            class="masonry-item"
+          >
+            <img
+              data-testid="flickr-grid-photo"
+              src="https://farmundefined.staticflickr.com/undefined/undefined_undefined_z.jpg"
+              style="border-radius: 1.5rem;"
+              width="300px"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  `)
+})

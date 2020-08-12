@@ -1,38 +1,33 @@
 import React from 'react'
+import Masonry from 'react-masonry-css'
+import './index.css'
 
 import Photo from 'components/Photo'
 
 function PhotoGrid({ photos, numberOfPhotos = 9 }) {
   photos = photos ? photos.slice(0, numberOfPhotos) : []
 
+  const breakpointColumnsObj = {
+    default: 4,
+    1300: 3,
+    900: 2,
+    700: 1,
+  }
+
   return (
-    <div style={style.container}>
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="my-masonry-grid"
+      columnClassName="my-masonry-grid_column"
+    >
       {photos &&
         photos.map(({ id, secret, server, farm }, index) => (
-          <div key={index} style={style.item}>
+          <div key={index} className="masonry-item">
             <Photo id={id} secret={secret} server={server} farm={farm} />
           </div>
         ))}
-    </div>
+    </Masonry>
   )
-}
-
-const style = {
-  container: {
-    display: 'grid',
-    width: '80%',
-    margin: '1rem auto',
-    gridTemplateColumns: '1fr 1fr 1fr',
-    gridGap: '1rem',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  item: {
-    display: 'grid',
-    alignContent: 'center',
-    justifyItems: 'center',
-    overflow: 'hidden',
-  },
 }
 
 export default PhotoGrid

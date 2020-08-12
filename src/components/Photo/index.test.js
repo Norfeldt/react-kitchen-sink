@@ -31,6 +31,6 @@ test('builds img src url based on passed props', () => {
 
   const { getByTestId } = render(<Photo {...fakeProps} />)
 
-  const src = `https://farm${fakeProps.farm}.staticflickr.com/${fakeProps.server}/${fakeProps.id}_${fakeProps.secret}_q.jpg`
+  const src = `https://farm${fakeProps.farm}.staticflickr.com/${fakeProps.server}/${fakeProps.id}_${fakeProps.secret}_z.jpg`
   expect(getByTestId(PHOTO_COMP_TEST_ID)).toHaveAttribute('src', src)
 })
