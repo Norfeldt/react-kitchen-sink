@@ -5,7 +5,7 @@ import Welcome from '.'
 
 test('renders a warm welcome message', () => {
   const { getByText } = render(<Welcome />)
-  const welcomeMessage = /👋 hi there!/i
+  const welcomeMessage = /search good old flickr!/i
 
   expect(getByText(welcomeMessage)).toBeInTheDocument()
 })
