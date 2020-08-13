@@ -1,10 +1,21 @@
 import React from 'react'
-import { render, fireEvent, act } from '@testing-library/react'
-import * as axiosMock from 'axios'
+import { render, fireEvent, act, wait } from '@testing-library/react'
+import { rest } from 'msw'
+import { setupServer } from 'msw/node'
 
 import SearchBox from '.'
 
-jest.mock('axios')
+const fakeServer = setupServer(
+  rest.get(
+    'https://api.flickr.com/services/rest/?method=flickr.photos.search',
+    (req, res, ctx) =>
+      res(ctx.status(200), ctx.json({ photos: { photo: [1, 2, 3] } }))
+  )
+)
+
+beforeAll(() => fakeServer.listen())
+afterEach(() => fakeServer.resetHandlers())
+afterAll(() => fakeServer.close())
 
 test('there is an input field with a placeholder', () => {
   const { getByLabelText } = render(<SearchBox />)
@@ -20,10 +31,8 @@ test('three is a submit search term button with the word SEARCH', () => {
 })
 
 test('it calls Flickr REST request when submitting search term', async () => {
-  axiosMock.get.mockImplementation(() =>
-    Promise.resolve({ data: { photos: { photos: [] } } })
-  )
-  const { getByLabelText } = render(<SearchBox />)
+  const fakeSetPhotos = jest.fn(() => {})
+  const { getByLabelText } = render(<SearchBox setPhotos={fakeSetPhotos} />)
   const input = getByLabelText('Search Flickr')
   const submitButton = getByLabelText('Submit search')
 
@@ -32,7 +41,7 @@ test('it calls Flickr REST request when submitting search term', async () => {
     await fireEvent.click(submitButton)
   })
 
-  expect(axiosMock.get).toHaveBeenCalledWith(
-    `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${process.env.REACT_APP_API_KEY}&per_page=10&format=json&nojsoncallback=1'&text=Finding%20Wally`
-  )
+  await wait()
+
+  expect(fakeSetPhotos).toHaveBeenCalledWith([1, 2, 3])
 })
