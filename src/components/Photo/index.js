@@ -16,6 +16,7 @@ function Photo({ farm, server, id, secret, title }) {
 const styles = {
   container: {
     borderRadius: '1.5rem',
+    opacity: '0.8',
   },
 }
 
