@@ -2,6 +2,7 @@ import React from 'react'
 
 import Welcome from './components/Welcome'
 import PhotoGrid from 'components/PhotoGrid'
+import SearchBox from 'components/SearchBox'
 
 function App() {
   const photos = [
@@ -121,6 +122,7 @@ function App() {
 
   return (
     <div style={styles.container}>
+      <SearchBox />
       <Welcome />
       <PhotoGrid photos={photos} />
     </div>
