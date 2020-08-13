@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import './index.css'
 
-function SearchBox({ setPhotos}) {
+function SearchBox({ setPhotos }) {
   const [searchTerm, setSearchTerm] = useState('')
 
   const handleTyping = (event) => {
@@ -54,6 +54,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: '1.5rem',
   },
   form: {
     display: 'flex',
