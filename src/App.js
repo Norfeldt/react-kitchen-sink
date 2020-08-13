@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div style={styles.container}>
-      <SearchBox />
+      <SearchBox setPhotos={setPhotos} />
       <Welcome />
       <PhotoGrid photos={photos} />
     </div>

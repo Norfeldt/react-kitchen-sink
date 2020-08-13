@@ -3,9 +3,8 @@ import axios from 'axios'
 
 import './index.css'
 
-function SearchBox() {
+function SearchBox({ setPhotos}) {
   const [searchTerm, setSearchTerm] = useState('')
-  const [results, setResults] = useState('')
 
   const handleTyping = (event) => {
     event.preventDefault()
@@ -21,7 +20,8 @@ function SearchBox() {
         searchTerm
       )}`
       const { data } = await axios.get(restURL)
-      setResults(data)
+      const fetchedPhotos = data.photos.photo
+      setPhotos(fetchedPhotos)
     } catch (error) {
       console.error(error)
     }
