@@ -20,7 +20,9 @@ test('three is a submit search term button with the word SEARCH', () => {
 })
 
 test('it calls Flickr REST request when submitting search term', async () => {
-  axiosMock.get.mockImplementation(() => Promise.resolve({ data: {} }))
+  axiosMock.get.mockImplementation(() =>
+    Promise.resolve({ data: { photos: { photos: [] } } })
+  )
   const { getByLabelText } = render(<SearchBox />)
   const input = getByLabelText('Search Flickr')
   const submitButton = getByLabelText('Submit search')
