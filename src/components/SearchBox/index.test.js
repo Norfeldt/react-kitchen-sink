@@ -1,5 +1,6 @@
 import React from 'react'
-import { render, fireEvent, act, wait } from '@testing-library/react'
+import { render, act, wait } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 
@@ -37,8 +38,8 @@ test('it calls Flickr REST request when submitting search term', async () => {
   const submitButton = getByLabelText('Submit search')
 
   await act(async () => {
-    await fireEvent.change(input, { target: { value: 'Finding Wally' } })
-    await fireEvent.click(submitButton)
+    await userEvent.type(input, 'Finding Walley')
+    await userEvent.click(submitButton)
   })
 
   await wait()
