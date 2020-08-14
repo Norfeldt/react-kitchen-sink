@@ -4,7 +4,7 @@ import { render } from '@testing-library/react'
 import PhotoGrid from '.'
 
 test('default renders 9 photos if provided 9', () => {
-  const photos = [...Array(10).keys()]
+  const photos = [...Array(9).keys()]
   const { getAllByTestId } = render(<PhotoGrid photos={photos} />)
 
   expect(getAllByTestId(PHOTO_COMP_TEST_ID)).toHaveLength(9)
