@@ -1,0 +1,14 @@
+# .kodiak.toml
+# Minimal config. version is the only required field.
+version = 1
+
+[merge]
+automerge_label = "auto-merge 🤖"
+
+blocking_title_regex = "^WIP.*"
+blocking_labels = ["wip"]
+method = "rebase"
+
+notify_on_conflict = true
+
+message.include_pull_request_url = true
