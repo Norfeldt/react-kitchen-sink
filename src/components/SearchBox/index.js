@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import Axios from 'axios'
 
 import './index.css'
 
 function SearchBox({ setPhotos }) {
   const [searchTerm, setSearchTerm] = useState('')
+  const [source, setSource] = useState(Axios.CancelToken.source())
+
+  useEffect(() => { 
+    return source.cancel()
+   }, [])
 
   const handleTyping = (event) => {
     event.preventDefault()
@@ -19,11 +24,13 @@ function SearchBox({ setPhotos }) {
       }&per_page=10&format=json&nojsoncallback=1'&text=${encodeURIComponent(
         searchTerm
       )}`
-      const { data } = await axios.get(restURL)
+      const { data } = await Axios.get(restURL, { cancelToken: source.token})
       const fetchedPhotos = data.photos.photo
       setPhotos(fetchedPhotos)
     } catch (error) {
-      console.error(error)
+      if (!Axios.isCancel(error)) {
+        throw error
+      }
     }
   }
 

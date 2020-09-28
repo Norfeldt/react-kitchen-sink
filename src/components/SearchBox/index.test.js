@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, act, wait } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
@@ -31,18 +31,14 @@ test('three is a submit search term button with the word SEARCH', () => {
   expect(getByLabelText('Submit search')).toHaveTextContent('SEARCH')
 })
 
-test('it calls Flickr REST request when submitting search term', async () => {
+test('it calls Flickr REST request when submitting search term', () => {
   const fakeSetPhotos = jest.fn(() => {})
   const { getByLabelText } = render(<SearchBox setPhotos={fakeSetPhotos} />)
   const input = getByLabelText('Search Flickr')
   const submitButton = getByLabelText('Submit search')
 
-  await act(async () => {
-    await userEvent.type(input, 'Finding Walley')
-    await userEvent.click(submitButton)
-  })
+  userEvent.type(input, 'Finding Walley')
+  userEvent.click(submitButton)
 
-  await wait()
-
-  expect(fakeSetPhotos).toHaveBeenCalledWith([1, 2, 3])
+  waitFor(() => expect(fakeSetPhotos).toHaveBeenCalledWith([1, 2, 3])).catch()
 })

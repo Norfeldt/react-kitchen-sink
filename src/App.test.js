@@ -1,5 +1,5 @@
 import React from 'react'
-import { render, wait, act } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
 
@@ -17,11 +17,8 @@ beforeAll(() => fakeServer.listen())
 afterEach(() => fakeServer.resetHandlers())
 afterAll(() => fakeServer.close())
 
-test('it calls Flickr REST request on initial load to show some photos', async () => {
+test('it calls Flickr REST request on initial load to show some photos',  () => {
   const { getAllByTestId } = render(<App />)
 
-  await act(async () => {})
-  await wait()
-
-  expect(getAllByTestId(PHOTO_COMP_TEST_ID)).toHaveLength(3)
+  waitFor(() => expect(getAllByTestId(PHOTO_COMP_TEST_ID)).toHaveLength(3) )
 })
