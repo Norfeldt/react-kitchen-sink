@@ -2,10 +2,12 @@
 # Minimal config. version is the only required field.
 version = 1
 
-[merge]
-automerge_label = "auto-merge 🤖"
+[approve]
+# https://kodiakhq.com/docs/recipes#configuring-dependabot-with-the-automerge-label
+auto_approve_usernames = ["dependabot"]
 
-blocking_title_regex = "^WIP.*"
+[merge]
+blocking_title_regex = ".*(WIP|NOT\s.*MERGE).*"
 blocking_labels = ["wip"]
 method = "rebase"
 
