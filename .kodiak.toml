@@ -4,7 +4,7 @@ version = 1
 
 [merge]
 automerge_label = "dependencies"
-blocking_title_regex = ".*(WIP|NOT\s.*MERGE).*"
+blocking_title_regex = ".*WIP.*"
 blocking_labels = ["wip"]
 method = "rebase"
 
