@@ -8,5 +8,3 @@ updates:
       interval: "daily"
     labels:
       - "dependencies"
-      # Add default Kodiak `merge.automerge_label`
-      - "auto-merge 🤖"
