@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-18.04
     container: cypress/browsers:node12.18.3-chrome83-ff77
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
         
       - name: Install cypress and verify
         run: |
