@@ -40,6 +40,6 @@
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-extended": "^0.11.5",
     "msw": "^0.22.0",
-    "prettier": "^2.1.2"
+    "prettier": "^2.2.0"
   }
 }
