@@ -39,7 +39,7 @@
     "@types/jest": "^26.0.19",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-extended": "^0.11.5",
-    "msw": "^0.26.0",
+    "msw": "^0.26.1",
     "prettier": "^2.2.0"
   }
 }
