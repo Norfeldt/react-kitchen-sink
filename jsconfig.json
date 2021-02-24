@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "paths": {
+      "@fixtures": ["./cypress/fixtures"]
+    }
   },
-  "include": ["src"]
+  "include": ["src", "cypress"]
 }

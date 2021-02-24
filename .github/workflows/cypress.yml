@@ -1,18 +1,21 @@
-name: E2E on Chrome
+name: Cypress
 on: [push]
 jobs:
-  cypress-test:
-    name: Chrome 83
-    runs-on: ubuntu-18.04
-    container: cypress/browsers:node12.18.3-chrome83-ff77
+  cypress-run:
+    name: Chrome E2E Testing
+    runs-on: ubuntu-16.04
     steps:
-      - uses: actions/checkout@v2
-        
-      - name: Install cypress and verify
-        run: |
-          yarn install
-          yarn cypress verify
-      
-      - name: Run Cypress tests
-        run: yarn ci
-        continue-on-error: true
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          browser: chrome
+          record: true
+          start: npm start
+          wait-on: 'http://localhost:3000'

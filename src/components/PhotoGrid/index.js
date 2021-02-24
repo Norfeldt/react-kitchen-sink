@@ -1,11 +1,11 @@
 import React from 'react'
 import Masonry from 'react-masonry-css'
-import './index.css'
+import styles from './PhotoGrid.module.css'
 
 import Photo from 'components/Photo'
 
-function PhotoGrid({ photos, numberOfPhotos = 9 }) {
-  const imgs = photos ? photos.slice(0, numberOfPhotos) : []
+function PhotoGrid({ photos = [], numberOfPhotos = 9 }) {
+  photos = photos.filter((value, index) => index + 1 <= numberOfPhotos ?? value)
 
   const breakpointColumnsObj = {
     default: 4,
@@ -17,14 +17,11 @@ function PhotoGrid({ photos, numberOfPhotos = 9 }) {
   return (
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid"
-      columnClassName="my-masonry-grid_column"
-    >
-      {imgs &&
-        imgs.map(({ id, secret, server, farm }, index) => (
-          <div key={index} className="masonry-item">
-            <Photo id={id} secret={secret} server={server} farm={farm} />
-          </div>
+      className={styles.grid}
+      columnClassName={styles.column}>
+      {photos &&
+        photos.map(({ id, secret, server, farm }, index) => (
+          <Photo key={index} id={id} secret={secret} server={server} farm={farm} />
         ))}
     </Masonry>
   )

@@ -1,23 +1,13 @@
 import React from 'react'
+import styles from './Photo.module.css'
 
 function Photo({ farm, server, id, secret, title }) {
   const src = `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_z.jpg`
   return (
-    <img
-      width="300px"
-      style={styles.container}
-      data-testid="flickr-grid-photo"
-      src={src}
-      alt={title}
-    />
+    <div className={styles.container}>
+      <img width="100%" data-testid="flickr-grid-photo" src={src} alt={title} />
+    </div>
   )
-}
-
-const styles = {
-  container: {
-    borderRadius: '1.5rem',
-    opacity: '0.8',
-  },
 }
 
 export default Photo

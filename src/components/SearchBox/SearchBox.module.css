@@ -1,0 +1,42 @@
+.container {
+  --transparent-grey: hsla(0, 0%, 0%, 10%);
+  --transparent-grey-border: 1px solid var(--transparent-grey);
+}
+
+.container form {
+  display: flex;
+  margin: 2px;
+  background-color: hsla(0, 0%, 100%, 80%);
+  border-radius: 0.5em;
+  border: var(--transparent-grey-border);
+}
+
+.container input {
+  flex-grow: 1;
+  outline: none;
+  font-size: clamp(0.7rem, -0.5rem + 0.1vw, 1rem);
+  border: none;
+  border-radius: 0.5em;
+  padding-left: 0.5em;
+  min-width: 3rem;
+}
+
+.container button {
+  background-color: transparent;
+  border: none;
+  margin: 0.3em;
+}
+
+.container button > span {
+  display: flex;
+  font-size: 1rem;
+  border-radius: 1000000px;
+  padding: 0 10px;
+}
+
+.container button:hover > span {
+  transition: 200ms;
+  transform-origin: bottom;
+  transform: scale(1.1);
+  box-shadow: 0 1px 2px var(--transparent-grey);
+}

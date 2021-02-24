@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-
-import Welcome from './components/Welcome'
-import PhotoGrid from 'components/PhotoGrid'
-import SearchBox from 'components/SearchBox'
 import Axios from 'axios'
+
+import SearchBox from './components/SearchBox'
+import PhotoGrid from './components/PhotoGrid'
+import Title from './components/Title'
+import styles from './App.module.css'
 
 function App() {
   const [photos, setPhotos] = useState([])
@@ -29,18 +29,12 @@ function App() {
   }, [])
 
   return (
-    <div style={styles.container}>
-      <Welcome />
+    <div className={styles.container}>
+      <Title />
       <SearchBox setPhotos={setPhotos} />
       <PhotoGrid photos={photos} />
     </div>
   )
-}
-
-const styles = {
-  container: {
-    marginBottom: '3rem',
-  },
 }
 
 export default App

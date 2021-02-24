@@ -1,0 +1,41 @@
+.container {
+  display: grid;
+  justify-content: center;
+  margin: 0.5rem 0rem;
+  border-radius: 0.5rem;
+  padding: 1px;
+  background: -webkit-linear-gradient(
+    to bottom,
+    var(--gradient-color-start),
+    var(--gradient-color-middle),
+    var(--gradient-color-end)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-color-start),
+    var(--gradient-color-middle),
+    var(--gradient-color-end)
+  );
+
+  --duration: 1s;
+
+  animation: fadeIn ease-in var(--duration);
+  -webkit-animation: fadeIn ease-in var(--duration);
+  -moz-animation: fadeIn ease-in var(--duration);
+  -o-animation: fadeIn ease-in var(--duration);
+  -ms-animation: fadeIn ease-in var(--duration);
+}
+
+.container img {
+  border-radius: 0.5rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(5px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

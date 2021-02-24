@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import dotenv from 'dotenv'
 
-import './index.css'
+import 'normalize.css'
+import './style.general.css'
 
 dotenv.config()
 

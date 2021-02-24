@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+
+  --gradient-color-start: #f64f59;
+  --gradient-color-middle: #c471ed;
+  --gradient-color-end: #12c2e9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin-bottom: -40px;
+  font-size: 1rem;
+  font: inherit;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
