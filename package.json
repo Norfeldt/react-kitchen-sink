@@ -46,7 +46,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.3",
-    "@types/jest": "^26.0.19",
+    "@types/jest": "^26.0.20",
     "cypress": "6.5.0",
     "dotenv": "^8.2.0",
     "faker": "^5.1.0",
