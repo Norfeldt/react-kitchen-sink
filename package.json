@@ -1,23 +1,27 @@
 {
-  "name": "flickr-code-challenge",
-  "version": "0.1.0",
+  "name": "playground",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.3",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "normalize.css": "^8.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-masonry-css": "^1.0.14",
-    "react-scripts": "4.0.0"
+    "react-scripts": "^3.4.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts -r @cypress/instrument-cra start",
+    "start:silent": "BROWSER=none yarn start",
+    "start:server": "start-server-and-test start:silent http://localhost:3000",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generate:envExample": "cat .env | sed 's/=.*/=/g' > .env.example",
+    "generate:ReactSvgComponents": "npx @svgr/cli src/assets -d src/icons --ignore-existing --replace-attr-values '#000=currentColor' --icon",
+    "jest:test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "cy:run": " 'yarn start:server './node_modules/.bin/cypress run'",
+    "cy:open": "yarn start:server './node_modules/.bin/cypress open'"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,17 +33,28 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 chrome version"
     ]
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.9.2",
+    "@cypress/instrument-cra": "^1.4.0",
+    "@cypress/webpack-preprocessor": "^5.5.0",
+    "@percy/cypress": "^2.3.3",
+    "@testing-library/cypress": "^7.0.1",
     "@testing-library/dom": "^7.29.6",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
     "@types/jest": "^26.0.19",
+    "cypress": "6.5.0",
+    "dotenv": "^8.2.0",
+    "faker": "^5.1.0",
+    "find-webpack": "^2.2.0",
     "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-extended": "^0.11.5",
     "msw": "^0.26.2",
-    "prettier": "^2.2.0"
+    "prettier": "^2.2.0",
+    "start-server-and-test": "^1.11.5"
   }
 }

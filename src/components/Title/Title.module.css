@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > span {
+  font-size: 10vw;
+}
+
+.container h1 {
+  text-align: center;
+  font-size: calc(1rem + 3vw);
+  font-family: Abril Fatface, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0 10px;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    var(--gradient-color-start),
+    var(--gradient-color-middle),
+    var(--gradient-color-end)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    var(--gradient-color-start),
+    var(--gradient-color-middle),
+    var(--gradient-color-end)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-text-stroke-width: 0.01px;
+  -webkit-text-stroke-color: hsla(0, 50%, 10%, 30%);
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.container svg {
+  font-size: 350%;
+}
+
+@media screen and (max-width: 500px) {
+  .adjectives {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .verb {
+    display: none;
+  }
+}
