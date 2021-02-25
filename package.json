@@ -55,6 +55,6 @@
     "jest-extended": "^0.11.5",
     "msw": "^0.26.2",
     "prettier": "^2.2.1",
-    "start-server-and-test": "^1.11.5"
+    "start-server-and-test": "^1.12.0"
   }
 }
