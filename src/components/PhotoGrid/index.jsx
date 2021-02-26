@@ -5,7 +5,7 @@ import styles from './PhotoGrid.module.css'
 import Photo from 'components/Photo'
 
 function PhotoGrid({ photos = [], numberOfPhotos = 9 }) {
-  photos = photos.filter((value, index) => index + 1 <= numberOfPhotos ?? value)
+  photos = photos.filter((_value, index) => index + 1 <= numberOfPhotos)
 
   const breakpointColumnsObj = {
     default: 4,
