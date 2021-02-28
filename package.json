@@ -21,7 +21,8 @@
     "generate:ReactSvgComponents": "npx @svgr/cli src/assets -d src/icons --ext 'jsx' --ignore-existing --replace-attr-values '#000=currentColor' --icon ",
     "jest:test": "react-scripts test --env=jest-environment-jsdom-sixteen",
     "cy:run": " 'yarn start:server './node_modules/.bin/cypress run'",
-    "cy:open": "yarn start:server './node_modules/.bin/cypress open'"
+    "cy:open": "yarn start:server './node_modules/.bin/cypress open'",
+    "percy:local": "PERCY_TOKEN=$(grep 'PERCY_TOKEN.*' .env | sed 's/.*=//') PERCY_BRANCH=local yarn start:server 'percy exec cypress run'"
   },
   "eslintConfig": {
     "extends": "react-app"
