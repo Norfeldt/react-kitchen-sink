@@ -9,7 +9,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-masonry-css": "^1.0.14",
-    "react-scripts": "^3.4.4"
+    "react-scripts": "4.0.2"
   },
   "scripts": {
     "start": "react-scripts -r @cypress/instrument-cra start",
@@ -19,7 +19,8 @@
     "eject": "react-scripts eject",
     "generate:envExample": "cat .env | sed 's/=.*/=/g' > .env.example",
     "generate:ReactSvgComponents": "npx @svgr/cli src/assets -d src/icons --ext 'jsx' --ignore-existing --replace-attr-values '#000=currentColor' --icon ",
-    "jest:test": "react-scripts test --env=jest-environment-jsdom-sixteen",
+    "jest:test": "react-scripts test",
+    "jest:coverage": "react-scripts test --watchAll=false --coverage",
     "cy:run": " 'yarn start:server './node_modules/.bin/cypress run'",
     "cy:open": "yarn start:server './node_modules/.bin/cypress open'",
     "percy:local": "PERCY_TOKEN=$(grep 'PERCY_TOKEN.*' .env | sed 's/.*=//') PERCY_BRANCH=local yarn start:server 'percy exec cypress run'"
@@ -48,14 +49,21 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.0",
     "@types/jest": "^26.0.20",
+    "codecov": "^3.8.1",
     "cypress": "6.5.0",
     "dotenv": "^8.2.0",
     "faker": "^5.4.0",
     "find-webpack": "^2.2.1",
-    "jest-environment-jsdom-sixteen": "^1.0.3",
     "jest-extended": "^0.11.5",
     "msw": "^0.26.2",
     "prettier": "^2.2.1",
     "start-server-and-test": "^1.12.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/cypress/"
+    ]
   }
 }

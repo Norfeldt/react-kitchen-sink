@@ -19,3 +19,11 @@ jobs:
           record: true
           start: npm start
           wait-on: 'http://localhost:3000'
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          name: cypress
+          flags: E2E
+          env_vars: OS

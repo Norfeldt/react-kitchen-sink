@@ -24,4 +24,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
-      - run: yarn jest:test
+      - run: yarn jest:coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          name: node${{ secrets.CODECOV_TOKEN }}
+          flags: unittests
+          env_vars: OS
