@@ -26,7 +26,10 @@
     "percy:local": "PERCY_TOKEN=$(grep 'PERCY_TOKEN.*' .env | sed 's/.*=//') PERCY_BRANCH=local yarn start:server 'percy exec cypress run'"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:cypress/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -52,6 +55,7 @@
     "codecov": "^3.8.1",
     "cypress": "6.6.0",
     "dotenv": "^8.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "faker": "^5.4.0",
     "find-webpack": "^2.2.1",
     "jest-extended": "^0.11.5",
