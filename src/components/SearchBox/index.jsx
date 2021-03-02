@@ -6,6 +6,7 @@ import styles from './SearchBox.module.css'
 
 function SearchBox({ setPhotos }) {
   const [searchTerm, setSearchTerm] = useState('')
+  const [error, setError] = useState(false)
 
   const handleTyping = (event) => {
     event.preventDefault()
@@ -29,6 +30,7 @@ function SearchBox({ setPhotos }) {
       setSearchTerm('')
     } catch (error) {
       if (!Axios.isCancel(error)) {
+        setError(true)
         throw error
       }
     }
@@ -47,6 +49,8 @@ function SearchBox({ setPhotos }) {
           <MagnifyingGlass />
         </button>
       </form>
+
+      <dialog open={error}>Oops! Something went wrong..</dialog>
     </section>
   )
 }
