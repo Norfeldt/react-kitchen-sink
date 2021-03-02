@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     const source = Axios.CancelToken.source()
     fetchInitialPhotos(source.token)
-    return source.cancel()
+    return () => source.cancel()
   }, [])
 
   return (

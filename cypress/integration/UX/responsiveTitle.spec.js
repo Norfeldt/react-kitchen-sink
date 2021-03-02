@@ -1,8 +1,33 @@
 /// <reference types="cypress" />
 // ☝️ magic 🎩 ✨ https://youtu.be/lgurVvQsOTY?t=1225 ✨ - https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html
+import { photosResponse as photosResponseFake } from '@fixtures/fakeResponses'
 
 context('Responsive title', () => {
   beforeEach(() => {
+    cy.intercept(
+      {
+        method: 'GET',
+        url: /^https:\/\/api\.flickr\.com\/services/,
+      },
+      {
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: {
+          ...photosResponseFake(3),
+        },
+        stat: 'ok',
+      }
+    )
+
+    cy.intercept(
+      {
+        method: 'GET',
+        url: 'https://farm*.staticflickr.com/**/*',
+      },
+      { fixture: '600x315.jpg' }
+    ).as('getPhotos')
+
     cy.visit('http://localhost:3000')
   })
 
