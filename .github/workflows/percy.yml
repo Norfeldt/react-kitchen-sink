@@ -12,6 +12,7 @@ jobs:
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         with:
-          start: npm start
+          build: yarn build
+          start: npx serve -s build -l 3000
           wait-on: 'http://localhost:3000'
           command-prefix: 'percy exec -- npx'
