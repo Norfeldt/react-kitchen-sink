@@ -59,7 +59,7 @@
     "faker": "^5.4.0",
     "find-webpack": "^2.2.1",
     "jest-extended": "^0.11.5",
-    "msw": "^0.27.1",
+    "msw": "^0.27.2",
     "prettier": "^2.2.1",
     "start-server-and-test": "^1.12.1"
   },
