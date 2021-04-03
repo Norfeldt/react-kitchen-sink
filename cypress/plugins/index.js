@@ -12,8 +12,6 @@ const path = require('path')
 const findWebpack = require('find-webpack')
 const webpackPreprocessor = require('@cypress/webpack-preprocessor')
 
-const percyHealthCheck = require('@percy/cypress/task')
-
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 /**
@@ -41,9 +39,6 @@ module.exports = (on, config) => {
   on('file:preprocessor', webpackPreprocessor(options))
 
   require('@cypress/code-coverage/task')(on, config)
-
-  // PERCY SNAPSHOTS - https://docs.percy.io/docs/cypress
-  on('task', percyHealthCheck)
 
   // IMPORTANT to return the config object
   // with the any changed environment variables
