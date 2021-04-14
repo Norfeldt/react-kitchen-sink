@@ -57,7 +57,7 @@
     "cypress": "6.9.1",
     "dotenv": "^8.2.0",
     "eslint-plugin-cypress": "^2.11.2",
-    "faker": "^5.5.2",
+    "faker": "^5.5.3",
     "find-webpack": "^2.2.1",
     "jest-extended": "^0.11.5",
     "msw": "^0.28.1",
