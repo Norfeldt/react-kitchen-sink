@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.4",
+    "@cypress/code-coverage": "^3.9.5",
     "@cypress/instrument-cra": "^1.4.0",
     "@cypress/webpack-preprocessor": "^5.7.0",
     "@percy/cli": "^1.0.0-beta.44",
@@ -52,9 +52,9 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.5",
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^26.0.23",
     "codecov": "^3.8.1",
-    "cypress": "7.1.0",
+    "cypress": "7.2.0",
     "dotenv": "^8.2.0",
     "eslint-plugin-cypress": "^2.11.2",
     "faker": "^5.5.3",
