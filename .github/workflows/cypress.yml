@@ -16,7 +16,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           browser: chrome
-          record: true
+          record: false
           start: npm start
           wait-on: 'http://localhost:3000'
 
