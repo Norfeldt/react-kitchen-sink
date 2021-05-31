@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@cypress/code-coverage": "^3.9.5",
+    "@cypress/code-coverage": "^3.9.6",
     "@cypress/instrument-cra": "^1.4.0",
     "@cypress/webpack-preprocessor": "^5.9.0",
     "@percy/cli": "^1.0.0-beta.52",
