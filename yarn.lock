@@ -2479,10 +2479,10 @@
     tunnel-agent "^0.6.0"
     uuid "^3.3.2"
 
-"@cypress/webpack-preprocessor@^5.9.0":
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/@cypress/webpack-preprocessor/-/webpack-preprocessor-5.9.0.tgz#6f30fe0fa6cd31f630700fa212b3a9ad91797a6c"
-  integrity sha512-9mzk9PdbCv+FMXZnlg0BK0PkKvOM7AYjc0c8vDhdcQh2ZId8TvV64t81wyWwN8g2H49Ns0ynhXZCJLu+luO83g==
+"@cypress/webpack-preprocessor@^5.9.1":
+  version "5.9.1"
+  resolved "https://registry.yarnpkg.com/@cypress/webpack-preprocessor/-/webpack-preprocessor-5.9.1.tgz#2694aa832baf3984d90bcb899e1ecff377560904"
+  integrity sha512-cg1ikftIo7NdlRA8ocNSxWjHJlh1JlTkN9ZfXUuKWWcJgrEdYLjXk0UzY6gYbLLaFka4oIhN6SvL5Y/7iELvgg==
   dependencies:
     bluebird "^3.7.1"
     debug "4.3.2"
@@ -6533,11 +6533,6 @@ doctrine@^3.0.0:
     esutils "^2.0.2"
 
 dom-accessibility-api@^0.5.4, dom-accessibility-api@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.6.tgz#3f5d43b52c7a3bd68b5fb63fa47b4e4c1fdf65a9"
-  integrity sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==
-
-dom-accessibility-api@^0.5.6:
   version "0.5.6"
   resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.6.tgz#3f5d43b52c7a3bd68b5fb63fa47b4e4c1fdf65a9"
   integrity sha512-DplGLZd8L1lN64jlT27N9TVSESFR5STaEJvX+thCby7fuCHonfPpAlodYc3vuUYbDuDec5w8AMP7oCM5TWFsqw==
@@ -12267,10 +12262,10 @@ prepend-http@^1.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
   integrity sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=
 
-prettier@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
-  integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha512-lnJzDfJ66zkMy58OL5/NY5zp70S7Nz6KqcKkXYzn2tMVrNxvbqaBpg7H3qHaLxCJ5lNMsGuM8+ohS7cZrthdLQ==
 
 pretty-bytes@^5.3.0, pretty-bytes@^5.6.0:
   version "5.6.0"
