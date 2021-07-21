@@ -47,7 +47,7 @@
     "@cypress/webpack-preprocessor": "^5.9.1",
     "@percy/cli": "^1.0.0-beta.59",
     "@percy/cypress": "^3.1.0",
-    "@testing-library/cypress": "^7.0.6",
+    "@testing-library/cypress": "^8.0.0",
     "@testing-library/dom": "^8.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -60,7 +60,7 @@
     "faker": "^5.5.3",
     "find-webpack": "^2.2.1",
     "jest-extended": "^0.11.5",
-    "msw": "^0.32.0",
+    "msw": "^0.32.1",
     "prettier": "^2.3.2",
     "start-server-and-test": "^1.12.6"
   },
