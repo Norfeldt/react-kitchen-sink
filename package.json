@@ -60,9 +60,9 @@
     "faker": "^5.5.3",
     "find-webpack": "^2.2.1",
     "jest-extended": "^0.11.5",
-    "msw": "^0.32.2",
+    "msw": "^0.32.3",
     "prettier": "^2.3.2",
-    "start-server-and-test": "^1.12.6"
+    "start-server-and-test": "^1.13.0"
   },
   "jest": {
     "collectCoverageFrom": [
